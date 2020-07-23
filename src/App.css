@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.day{
+  background-color: azure;
+  text-align: center;
+}
+.night{
+  background-color:darkslategrey;
+  text-align: center;
+  
+}

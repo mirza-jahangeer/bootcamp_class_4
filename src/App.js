@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {Message} from './Message';
+import {Day} from './day';
 import './App.css';
 
-function App() {
+ function App() {
+  let [count, setCount] = useState(0);
+  let [isDay, setDay] = useState(false)
+  // setCount = count + 1;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${isDay ? "day":"night"}`}>
+      <Day isMorning={isDay}/>
+      <button onClick={() => setDay(!isDay)}>Turn</button>
+      <Message counter={count}/>
+      <button onClick={() => setCount(++count)}>Increment</button>
     </div>
   );
 }
